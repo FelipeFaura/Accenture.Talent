@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Inicio</title>
+</head>
+<body>
+	<form action="/menuPrincipal" method="post">
+	<h1>Nuclear Centrals Control. Use with Caution</h1>
+		<input type="text" placeholder="Email" name="email"/>
+		<input type="password" placeholder="Password" name="password"/>
+		<button>Conect</button>
+	</form>
+	<div>
+		<p th:if="${errorPassword}">Incorrect password, please try again</p>
+		<p th:if="${errorEmail}">Incorrect email, please try again</p>
+	</div>
+</body>
+</html>

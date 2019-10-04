@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Nuclear Plants List</title>
+</head>
+<body>
+	<h1>Nuclear Plants List</h1>
+	<table>
+		<tr>
+			<th>Nuclear Plant ID</th>
+			<th>Description</th>
+			<th>Functions</th>
+		</tr>
+		
+		<tr th:each="nuclearPlant : ${centralesLista}">
+	          <td>
+	          	<span th:text="${nuclearPlant.id}"></span>
+	          </td>
+	          <td>
+	             <span th:text="${nuclearPlant.descripcion}"></span>
+	          </td>
+	          <td>
+	          	<a th:href="@{/verFichaCentral(id=${nuclearPlant.id})}">Nuclear Plant Sheet</a>
+	          	<a th:href="@{/nuevaIncidencia(id=${nuclearPlant.id})}">Create new report</a>
+	          </td>
+	      </tr>
+      </table>
+</body>
+</html>

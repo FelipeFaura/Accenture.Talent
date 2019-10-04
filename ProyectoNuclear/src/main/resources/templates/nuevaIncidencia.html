@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Inicio</title>
+</head>
+<body>
+	<form action="/insertarIncidencia">
+		<span>Nuclear Plant ID</span><input type="text" name="nuclearPlantId" th:value="${idNuclearPlant}"/>
+		<span>user ID</span><input type="text" name="userId" th:value = "${userId}"/>
+		<span>Report</span><input type="text" placeholder="Report" name="report" />
+		<span>Resolved</span><input type="text" placeholder="Resolved" name="resolved"/>
+		<button>Insert New Report</button>
+	</form>
+</body>
+</html>

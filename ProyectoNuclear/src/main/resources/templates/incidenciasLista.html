@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Nuclear Plants List</title>
+</head>
+<body>
+	<h1>Nuclear Plants List</h1>
+	<table>
+		<tr>
+			<th>Report ID</th>
+			<th>User ID</th>
+			<th>Nuclear Plant ID</th>
+			<th>Report Text</th>
+			<th>Date</th>
+			<th>Solved</th>
+			<th>Functions</th>
+		</tr>
+		
+		<tr th:each="report : ${reportList}">
+	          <td>
+	          	<span th:text="${report.id}"></span>
+	          </td>
+	          <td>
+	             <span th:text="${report.id_usuario}"></span>
+	          </td>
+	          <td>
+	             <span th:text="${report.id_central}"></span>
+	          </td>
+	          <td>
+	             <span th:text="${report.texto}"></span>
+	          </td>
+	          <td>
+	             <span th:text="${report.fecha}"></span>
+	          </td>
+	          <td>
+	             <span th:text="${report.resuelta}"></span>
+	          </td>
+	          <td>
+	          	<a th:href="@{/borrarIncidencia(id=${report.id})}">Delete Report</a>
+
+	          </td>
+	      </tr>
+      </table>
+</body>
+</html>

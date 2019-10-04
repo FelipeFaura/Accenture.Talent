@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Nuclear Plant Sheet</title>
+</head>
+<body>
+	<h1>Nuclear Plant Sheet</h1>
+	<!-- This will be a bootstrap card -->
+	<table>
+		<tr>
+			<th>Nuclear Plant ID</th>
+			<th>Nuclear Plant ID Type</th>
+			<th>Latitude</th>
+			<th>Longitude</th>
+			<th>Image</th>
+			<th>Power</th>
+			<th>Province ID</th>
+			<th>Active</th>
+			<th>Start Date</th>
+			<th>End Date</th>
+			<th>Observations</th>
+		</tr>
+		
+		<tr th:each="nuclearPlant : ${nuclearPlant}">
+	          <td>
+	          	<span th:text="${nuclearPlant.id}"></span>
+	          </td>
+	          <td>
+	             <span th:text="${nuclearPlant.id_tipo}"></span>
+	          </td>
+	          <td>
+	             <span th:text="${nuclearPlant.latitud}"></span>
+	          </td>
+	          <td>
+	             <span th:text="${nuclearPlant.longitud}"></span>
+	          </td>
+	          <td>
+	             <img alt="Nuclear Plant" th:src="${nuclearPlant.imagen}"/>
+	          </td>
+	          <td>
+	             <span th:text="${nuclearPlant.potencia}"></span>
+	          </td>
+	          <td>
+	             <span th:text="${nuclearPlant.id_provincia}"></span>
+	          </td>
+	          <td>
+	             <span th:text="${nuclearPlant.activa}"></span>
+	          </td>
+	          <td>
+	             <span th:text="${nuclearPlant.inicio}"></span>
+	          </td>
+	          <td>
+	             <span th:text="${nuclearPlant.fin}"></span>
+	          </td>
+	          <td>
+	             <span th:text="${nuclearPlant.observaciones}"></span>
+	          </td>
+	          <td>
+	             <span th:text="${nuclearPlant.descripcion}"></span>
+	          </td>
+	      </tr>
+      </table>
+</body>
+</html>
